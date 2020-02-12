@@ -8,7 +8,7 @@ namespace DeckShuffler
     static void Main(string[] args)
     {
       //Once the program starts, you should create a new deck.
-      var cardDeck = new string[]
+      var cardDeck = new List<string>()
         {
             "Ace of Spades",
             "Two of Spades",
@@ -68,7 +68,7 @@ namespace DeckShuffler
       int n = 52;
       for (var i = n - 1; i >= 0; i--)
       {
-        var j = rnd.Next(cardDeck.Length);
+        var j = rnd.Next(cardDeck.Count);
         //swap items[i] with items[j]
         var swap = cardDeck[i];
         cardDeck[i] = cardDeck[j];
@@ -77,8 +77,16 @@ namespace DeckShuffler
 
       var currentCardIndex = 0;
 
+      cardDeck.Remove(cardDeck[currentCardIndex]);
       Console.WriteLine($"The top card is {cardDeck[currentCardIndex]}");
+      var playerHand = new List<string>() { };
+      playerHand.Add(cardDeck[currentCardIndex]);
+      var playerHand2 = new List<string>() { };
+      // for (var i = 0; i < playerHand.Count; i++)
+      // {
 
+      // Console.WriteLine($"This is in the playerHand List {playerHand[i]}");
+      // }
 
       bool seeCard = true;
       while (seeCard)
@@ -94,12 +102,31 @@ namespace DeckShuffler
         {
           currentCardIndex++;
           Console.WriteLine($"The next card is {cardDeck[currentCardIndex]}");
+          if (cardDeck.Count % 2 == 0)
+          {
+            cardDeck.Remove(cardDeck[currentCardIndex]);
+            playerHand.Add(cardDeck[currentCardIndex]);
+
+          }
+          else
+          {
+            cardDeck.Remove(cardDeck[currentCardIndex]);
+            playerHand2.Add(cardDeck[currentCardIndex]);
+
+          }
+          // for (var i = 0; i < playerHand.Count; i++)
+          // {
+          //   Console.WriteLine($"This is in the playerHand List {playerHand[i]}");
+          // }
+          // for (var i = 0; i < playerHand2.Count; i++)
+          // {
+          //   Console.WriteLine($"This is in the playerHand2 List {playerHand2[i]}");
+          // }
         }
         else if (nextCard == "quit")
         {
           seeCard = false;
         }
-
       }
     }
 
