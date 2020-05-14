@@ -2,18 +2,10 @@ namespace DeckShuffler
 {
   public class Card
   {
-    //PROPERTIES
-
-    //value
-    //public int Value { get; set; }
-    //rank
     public string Rank { get; set; }
-    //suit
     public string Suit { get; set; }
-    //color
     public string ColorOfTheCard { get; set; }
 
-    //METHOD
     public string DisplayCard()
     {
       return $"{Rank} of {Suit}";
