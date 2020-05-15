@@ -5,4 +5,4 @@
 [x] In addition to displaying the top two cards, also store these two "dealt" cards in a variable named playerHand. Consider what type of variable playerHand will have to be.
 [x] Implement a way to deal cards into two different hands.
 
-[] Implement the game of War
+[x] Implement the game of War

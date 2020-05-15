@@ -19,34 +19,12 @@ namespace DeckShuffler
       if (gameOn == "y")
       {
         war.PlayWar(cardDeck, playerHand, opponentHand);
+        Console.WriteLine($"Thanks for playing!");
       }
       else
       {
         Console.WriteLine("Goodbye");
       }
-
-
-      // string input = "";
-      // while (input == "" && cardDeck.Count > 0)
-      // {
-
-      //   Console.WriteLine($"The player has {playerHand.Count} cards");
-      //   var total = 0;
-      //   for (int i = 0; i < playerHand.Count; i++)
-      //   {
-      //     total += playerHand[i].GetCardValue();
-      //   }
-      //   Console.WriteLine($"The current total is {total}");
-
-      //   Console.WriteLine("hit enter...... you want to see the next card?");
-
-      //   input = Console.ReadLine().ToLower();
-      //   if (input == "")
-      //   {
-      //     Console.WriteLine($"The next card is {cardDeck[0].DisplayCard()} has a value of {cardDeck[0].GetCardValue()}");
-      //     playerHand.Add(cardDeck[0]);
-      //     cardDeck.RemoveAt(0);
-      //   }
     }
   }
 }
